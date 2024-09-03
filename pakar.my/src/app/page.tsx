@@ -80,19 +80,22 @@ export default function HomePage() {
       </div>
       <div className="container z-10 flex h-[60vh] flex-col items-center justify-center gap-10 px-4">
         <h1 className="-mb-10 text-[5rem] font-extrabold tracking-tight">
-          <span className="font-serif text-cyan-500">Pakar</span>.me
+          <span className="font-extrabold">Pakar</span>
+          .me
         </h1>
         <p className="text-balance text-center text-lg">
           Database jurulatih profesional yang berpengalaman di Malaysia.
         </p>
         <div className="flex w-full flex-row flex-wrap items-center justify-center gap-4 md:w-2/3">
           {categories.map((category) => (
-            <div
-              className="rounded-full bg-transparent px-3 py-1 text-sm tracking-wide ring-1 ring-white hover:bg-white hover:text-black hover:shadow-lg"
-              key={category}
-            >
-              <p>{category}</p>
-            </div>
+            <Link href="/trainers" key={category}>
+              <div
+                className="rounded-full bg-transparent px-3 py-1 text-sm tracking-wide ring-1 ring-white hover:bg-white hover:text-black hover:shadow-lg"
+                key={category}
+              >
+                <p>{category}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

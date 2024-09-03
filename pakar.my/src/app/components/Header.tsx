@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "node_modules/next/link";
-import { Menu } from "lucide-react";
 
 const navigation = [
   {
@@ -52,7 +51,7 @@ export default function Header() {
 
       <div className="fixed right-4 top-6 md:hidden">
         <button onClick={() => toggleMenu()}>
-          <Menu size={24} strokeWidth={3} className="text-white" />
+          <img src="/menu.svg" alt="menu" className="h-6 w-6 fill-white" />
         </button>
         <div
           id="mobile-menu"
