@@ -1,4 +1,3 @@
-import Image from "node_modules/next/image";
 import Link from "node_modules/next/link";
 
 const categories = [

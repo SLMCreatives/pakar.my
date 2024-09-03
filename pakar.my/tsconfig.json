@@ -18,7 +18,7 @@
     "lib": ["dom", "dom.iterable", "ES2022"],
     "noEmit": true,
     "module": "ESNext",
-    "moduleResolution": "node16",
+    "moduleResolution": "Node",
     "jsx": "preserve",
     "plugins": [{ "name": "next" }],
     "incremental": true,
@@ -37,8 +37,8 @@
     "**/*.cjs",
     "**/*.js",
     ".next/types/**/*.ts",
-    "src/app/components/Header.jsx",
-    "src/app/components/Footer.jsx"
+    "src/app/components/Header.tsx",
+    "src/app/components/Footer.tsx"
   ],
   "exclude": ["node_modules"]
 }
