@@ -80,10 +80,10 @@ export default function HomePage() {
       </div>
       <div className="container z-10 flex h-[60vh] flex-col items-center justify-center gap-10 px-4">
         <h1 className="-mb-10 text-[5rem] font-extrabold tracking-tight">
-          <span className="text-cyan-500">Pakar</span>.my
+          <span className="font-serif text-cyan-500">Pakar</span>.me
         </h1>
-        <p className="text-lg">
-          Find the perfect trainer for your training needs.
+        <p className="text-balance text-center text-lg">
+          Database jurulatih profesional yang berpengalaman di Malaysia.
         </p>
         <div className="flex w-full flex-row flex-wrap items-center justify-center gap-4 md:w-2/3">
           {categories.map((category) => (
@@ -96,11 +96,11 @@ export default function HomePage() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 items-center justify-center gap-0 px-10 pt-20 md:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-2 items-start justify-center gap-x-4 gap-y-8 px-8 pt-36 md:grid-cols-3 md:px-10 lg:grid-cols-6">
         {profiles.map((profile) => (
           <Link href="/trainers/profile" key={profile.name}>
             <div
-              className="group flex flex-col items-center gap-0 px-6 py-2 text-center md:py-4"
+              className="group flex flex-col items-center gap-0 px-2 py-2 text-center md:px-6 md:py-4"
               key={profile.name}
             >
               <img
@@ -108,7 +108,7 @@ export default function HomePage() {
                 alt={profile.name}
                 className="rounded-full ring-1 ring-slate-300 duration-300 group-hover:ring-cyan-400"
               />
-              <p className="mt-4 text-xl font-bold group-hover:text-cyan-400">
+              <p className="mt-4 text-lg font-bold group-hover:text-cyan-400 md:text-xl">
                 {profile.name}
               </p>
               <em className="text-sm text-slate-300">{profile.category}</em>
@@ -128,7 +128,7 @@ export default function HomePage() {
             <img
               src={logo.logo}
               alt={logo.alt}
-              className="h-20 w-24 object-contain"
+              className="h-20 w-24 object-contain brightness-200"
               key={logo.alt}
             />
           ))}

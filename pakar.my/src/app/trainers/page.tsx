@@ -40,11 +40,11 @@ export default function TrainersPage() {
         <h1 className="text-5xl font-bold">Trainers</h1>
         <p>Search for the best trainers in town</p>
       </div>
-      <div className="grid grid-cols-2 items-center justify-center gap-0 px-10 md:grid-cols-3 lg:grid-cols-3">
+      <div className="grid grid-cols-2 items-center justify-center gap-x-3 gap-y-6 px-4 md:grid-cols-3 md:px-10 lg:grid-cols-3">
         {profiles.map((profile) => (
           <Link href="/trainers/profile" key={profile.name}>
             <div
-              className="group flex flex-col items-center gap-0 px-6 py-2 text-center md:py-4"
+              className="group flex flex-col items-center gap-0 px-2 py-2 text-center md:px-6 md:py-4"
               key={profile.name}
             >
               <img
@@ -52,7 +52,7 @@ export default function TrainersPage() {
                 alt={profile.name}
                 className="rounded-full ring-1 ring-slate-300 duration-300 group-hover:ring-cyan-400"
               />
-              <p className="mt-4 text-xl font-bold group-hover:text-cyan-400">
+              <p className="mt-4 text-lg font-bold group-hover:text-cyan-400 md:text-xl">
                 {profile.name}
               </p>
               <em className="text-sm text-slate-300">{profile.category}</em>
