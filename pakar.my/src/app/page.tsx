@@ -1,35 +1,137 @@
-import Link from "next/link";
+import Image from "node_modules/next/image";
+import Link from "node_modules/next/link";
+
+const categories = [
+  "Business Management",
+  "Creative Thinkings",
+  "Teambuilding",
+  "Leadership",
+  "HR",
+  "Human Rights",
+  "Finance",
+];
+
+const profiles = [
+  {
+    name: "Azamil Izzat",
+    image: "https://i.pravatar.cc/300?u=johndoe",
+    category: "Management",
+  },
+  {
+    name: "Umar Abdul Aziz",
+    image: "https://i.pravatar.cc/300?u=41",
+    category: "Leadership",
+  },
+  {
+    name: "Karina Sofiah",
+    image: "https://i.pravatar.cc/300?u=73",
+    category: "Sustainable Development",
+  },
+  {
+    name: "Sulaiman Shafiq",
+    image: "https://i.pravatar.cc/300?u=19",
+    category: "Creative Thinking",
+  },
+  {
+    name: "Nurul Salihah",
+    image: "https://i.pravatar.cc/300?u=28",
+    category: "HR",
+  },
+  {
+    name: "Siti Hanifah",
+    image: "https://i.pravatar.cc/300?u=47",
+    category: "Business & Human Rights",
+  },
+];
+
+const logos = [
+  {
+    alt: "LHI Consulting",
+    logo: "/logos/lhi.png",
+  },
+  {
+    alt: "Air Selangor",
+    logo: "/logos/AS.png",
+  },
+  {
+    alt: "Bank Rakyat",
+    logo: "/logos/BR.png",
+  },
+  {
+    alt: "ILSAS",
+    logo: "/logos/ilsas.png",
+  },
+  {
+    alt: "TM",
+    logo: "/logos/TM.png",
+  },
+];
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
+    <main className="flex min-h-screen flex-col items-center justify-center gap-10 bg-black px-3 text-white">
+      <div className="absolute top-0 h-[80vh] w-full">
+        <img
+          src="/bg-hero.jpg"
+          alt="hero"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute top-0 h-full w-full bg-gradient-to-b from-transparent to-black object-cover"></div>
+      </div>
+      <div className="container z-10 flex h-[60vh] flex-col items-center justify-center gap-10 px-4">
+        <h1 className="-mb-10 text-[5rem] font-extrabold tracking-tight">
+          <span className="text-cyan-500">Pakar</span>.my
         </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
+        <p className="text-lg">
+          Find the perfect trainer for your training needs.
+        </p>
+        <div className="flex w-full flex-row flex-wrap items-center justify-center gap-4 md:w-2/3">
+          {categories.map((category) => (
+            <div
+              className="rounded-full bg-transparent px-3 py-1 text-sm tracking-wide ring-1 ring-white hover:bg-white hover:text-black hover:shadow-lg"
+              key={category}
+            >
+              <p>{category}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="grid grid-cols-2 items-center justify-center gap-0 px-10 pt-20 md:grid-cols-3 lg:grid-cols-6">
+        {profiles.map((profile) => (
+          <Link href="/trainers/profile" key={profile.name}>
+            <div
+              className="group flex flex-col items-center gap-0 px-6 py-2 text-center md:py-4"
+              key={profile.name}
+            >
+              <img
+                src={profile.image}
+                alt={profile.name}
+                className="rounded-full ring-1 ring-slate-300 duration-300 group-hover:ring-cyan-400"
+              />
+              <p className="mt-4 text-xl font-bold group-hover:text-cyan-400">
+                {profile.name}
+              </p>
+              <em className="text-sm text-slate-300">{profile.category}</em>
             </div>
           </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
+        ))}
+      </div>
+      <Link href="/trainers">
+        <div className="flex flex-col items-center gap-0 rounded-full bg-transparent px-4 py-1 text-center text-white ring-1 ring-white">
+          <p className="text-sm">View All</p>
+        </div>
+      </Link>
+      <div className="mt-20 flex w-[104%] flex-col items-center justify-center gap-4 overflow-x-clip px-0 py-6">
+        <p className="text-2xl font-extrabold">Trusted By:</p>
+        <div className="flex flex-grow flex-row flex-wrap items-center justify-center gap-10">
+          {logos.map((logo) => (
+            <img
+              src={logo.logo}
+              alt={logo.alt}
+              className="h-20 w-24 object-contain"
+              key={logo.alt}
+            />
+          ))}
         </div>
       </div>
     </main>
