@@ -42,7 +42,7 @@ export default function TrainersPage() {
       </div>
       <div className="grid grid-cols-2 items-center justify-center gap-0 px-10 md:grid-cols-3 lg:grid-cols-3">
         {profiles.map((profile) => (
-          <Link href="/trainers/profile">
+          <Link href="/trainers/profile" key={profile.name}>
             <div
               className="group flex flex-col items-center gap-0 px-6 py-2 text-center md:py-4"
               key={profile.name}
