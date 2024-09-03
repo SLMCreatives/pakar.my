@@ -53,7 +53,6 @@ export default function Header() {
       <div className="fixed right-4 top-6 md:hidden">
         <button onClick={() => toggleMenu()}>
           <Menu size={24} strokeWidth={3} className="text-white" />
-          <p className="text-white">Menu</p>
         </button>
         <div
           id="mobile-menu"
